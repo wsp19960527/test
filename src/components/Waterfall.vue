@@ -38,7 +38,7 @@ const addItems = async (items) => {
   for (let i = 0; i < items.length; i++) {
     let item = items[i]
     try {
-      if(item.type){
+      if(item.type === 'video'){
         let img = await loadImage(item.cover)
         console.log(`addItems-${i}`)
 
