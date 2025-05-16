@@ -8,7 +8,7 @@ const videos = [{
     src: 'https://community.233leyuan.com/community/post/7c16933e8f0a43d393ad6d8d1675ed57_503601618.mp4'
 }, {
     cover: 'https://community.233leyuan.com/community/post/f118cc3b8e7f4ca886bb4e5e1aa893ad_496365499.webp',
-    src: 'https://community.233leyuan.com/community/post/8fd8f70e5dbc4011992883862427ab5d_496365498.mp4'
+    src: 'https://community.233leyuan.com/community/post/8fd8f70e5dbc4011992883862427ab5d_496365498.mp4',
 }, {
     cover: 'https://community.233leyuan.com/community/post/7def8f06ffba466bb894b133a4b4f7aa_498249180.webp',
     src: 'https://qn-community.233leyuan.com/community/post/e8215b6226604aacbc10ea35ac31c7b1_498249179.mp4'
@@ -41,11 +41,11 @@ export function generateMockData(count = 10) {
             })
         } else {
             // 生成随机宽高的图片
-            const width = Mock.mock('@natural(200, 300)')
-            const height = Mock.mock('@natural(300, 450)')
+            const width = Mock.mock('@natural(200, 250)')
+            const height = Mock.mock('@natural(200, 300)')
             obj = Object.assign(obj, {
                 type: 'image',
-                cover: `https://picsum.photos/${width}/${height}/?blur=2`,
+                cover: `https://picsum.photos/${width}/${height}.webp`,
                 height,
                 width
             })

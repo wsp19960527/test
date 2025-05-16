@@ -33,12 +33,15 @@ function loadImage(src){
     }
   })
 }
-const addItems = (items) => {
+const addItems = async (items) => {
   let imgWidth = (props.width - 38) / 2
-  items.forEach( async (item) => {
+  for (let i = 0; i < items.length; i++) {
+    let item = items[i]
     try {
-      if(item.type === 'video'){
+      if(item.type){
         let img = await loadImage(item.cover)
+        console.log(`addItems-${i}`)
+
         const ratio = img.height / img.width
         const height = imgWidth * ratio // 假设宽度 300px，60 是标题和 margin
         item.height = height
@@ -67,11 +70,14 @@ const addItems = (items) => {
     }catch (e) {
 
     }
-
-
-
-
-  })
+  }
+  // items.forEach( async (item) => {
+  //
+  //
+  //
+  //
+  //
+  // })
 }
 function  clear() {
   leftItems.value = []
